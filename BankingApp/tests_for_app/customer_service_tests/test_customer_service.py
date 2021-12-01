@@ -9,25 +9,25 @@ customer = Customer(4, "Sam", "Denton", "C", "400 Dawson Drive", "Edinburg",
 
 
 # create customer test
-def test_validate_create_customer_entry(self, customer: Customer) -> Customer:
-    pass
+# def test_validate_create_customer_entry(self, customer: Customer) -> Customer:
+#     pass
 
 
 # get customer information
-def test_validate_get_customer_information(self, customer_id: int) -> Customer:
-    return self.customer_dao.get_customer_information(customer_id)
+# def test_validate_get_customer_information(self, customer_id: int) -> Customer:
+#     return self.customer_dao.get_customer_information(customer_id)
 
 
 # get list of customers information
-def test_validate_get_all_customers_information(self) -> list[Customer]:
-    pass
+# def test_validate_get_all_customers_information(self) -> list[Customer]:
+#     pass
 
 
 # update customer information
-def test_validate_update_customer_information(self, customer: Customer) -> Customer:
-    pass
+# def test_validate_update_customer_information(self, customer: Customer) -> Customer:
+#     pass
 
 
 # delete customer
-def test_validate_delete_customer_information(self, customer_id: int) -> bool:
-    pass
+# def test_validate_delete_customer_information(self, customer_id: int) -> bool:
+#     pass
