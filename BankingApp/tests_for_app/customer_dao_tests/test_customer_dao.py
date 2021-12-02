@@ -1,11 +1,15 @@
 from data_access_layer.implementation_classes.customer_dao_imp import CustomerDAOImp
+from data_access_layer.implementation_classes.customer_postgres_dao import CustomerPostgresDAO
 from entities.customer import Customer
 
+player_dao_postgres = CustomerPostgresDAO()
 customer_dao_imp = CustomerDAOImp()
 customer = Customer(4, "Sam", "Denton", "C", "400 Dawson Drive", "Edinburg",
-                    "Texas", "80247", "956-250-7894", "tom@gmail.com")
+                    "Texas", "80247", "956-250-7894", "tom@gmail.com", 1)
 test_customer = Customer(4, "Sam", "Denton", "C", "400 Dawson Drive", "Edinburg",
-                         "Texas", "80247", "956-250-7894", "tom@gmail.com")
+                         "Texas", "80247", "956-250-7894", "tom@gmail.com", 5)
+player_for_postgres = Customer(4, "Sam", "Denton", "C", "400 Dawson Drive", "Edinburg",
+                               "Texas", "80247", "956-250-7894", "tom@gmail.com", 5)
 
 
 def test_create_customer_success():
@@ -25,7 +29,7 @@ def test_select_customer_by_id_success():
 
 def test_update_customer_success():
     updated_customer = Customer(5, "Sam", "Houston", "C", "400 Dawson Drive", "Edinburg",
-                                "Texas", "80245", "956-250-7894", "tom@gmails.com")
+                                "Texas", "80245", "956-250-7894", "tom@gmails.com", 1)
     updated_customer1: Customer = customer_dao_imp.update_customer_information(updated_customer)
     assert updated_customer.zip_code == "80245"
 

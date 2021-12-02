@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d23172da-b289-453a-b91f-fc19f13d252b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BankingApp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_access_layer/implementation_classes/customer_postgres_dao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_for_app/postgres_tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests/test_customer_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_access_layer/implementation_classes/customer_dao_imp.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_access_layer/implementation_classes/customer_dao_imp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_for_app/customer_dao_tests/test_customer_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_for_app/customer_dao_tests/test_customer_dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_for_app/customer_service_tests/test_customer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_for_app/customer_service_tests/test_customer_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/database_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/database_connection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -27,24 +44,98 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration name="Python tests in tests_for_app" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for test_customer_dao.test_update_customer_success">
+    <configuration name="Python tests for test_customer_dao.test_delete_customer_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="BankingApp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_for_app&quot;" />
+      <option name="_new_target" value="&quot;test_customer_dao.test_delete_customer_success&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_customer_dao.test_get_customer_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BankingApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="HOST" value="database-1.cqhpyk08ztfn.us-west-2.rds.amazonaws.com" />
+        <env name="DBNAME" value="postgres" />
+        <env name="USER" value="postgres" />
+        <env name="PASSWORD" value="1083aCG!!" />
+        <env name="PORT" value="5432" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_customer_dao.test_get_customer_success&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_customer_dao.test_update_customer_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BankingApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_customer_dao.test_update_customer_success&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_customer_dao.py (1)" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BankingApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests/test_customer_dao.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in test_customer_dao.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BankingApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/customer_dao_tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_for_app/customer_dao_tests/test_customer_dao.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.Python tests in test_customer_dao.py (1)" />
+      <item itemvalue="Python tests.Python tests for test_customer_dao.test_get_customer_success" />
+      <item itemvalue="Python tests.Python tests for test_customer_dao.test_delete_customer_success" />
+      <item itemvalue="Python tests.Python tests in test_customer_dao.py" />
+      <item itemvalue="Python tests.Python tests for test_customer_dao.test_update_customer_success" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests in tests_for_app" />
+        <item itemvalue="Python tests.Python tests for test_customer_dao.test_update_customer_success" />
+        <item itemvalue="Python tests.Python tests in test_customer_dao.py (1)" />
+        <item itemvalue="Python tests.Python tests in test_customer_dao.py" />
+        <item itemvalue="Python tests.Python tests for test_customer_dao.test_delete_customer_success" />
+        <item itemvalue="Python tests.Python tests for test_customer_dao.test_get_customer_success" />
       </list>
     </recent_temporary>
   </component>
@@ -58,5 +149,28 @@
       <updated>1638389506559</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests/test_customer_dao.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

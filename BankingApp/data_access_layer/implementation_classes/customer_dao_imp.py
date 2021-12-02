@@ -6,12 +6,12 @@ from entities.customer import Customer
 class CustomerDAOImp(CustomerDAO):
     # premade customers to test methods
     premade_customer = Customer(1, "Amanda", "Gonzalez", "Christine", "900 Dawson Dr",
-                                "Denver", "Colorado", "80247", "956-255-5655", "email@aol.com")
+                                "Denver", "Colorado", "80247", "956-255-5655", "email@aol.com", 1)
     premade_customer_two = Customer(2, "Amanda", "Gonzalez", "Christine", "900 Dawson Dr",
-                                    "Denver", "Colorado", "80247", "956-255-5655", "email@yahoo.com")
+                                    "Denver", "Colorado", "80247", "956-255-5655", "email@yahoo.com", 2)
     # customer created to be deleted
     to_delete = Customer(3, "Amanda", "Gonzalez", "Christine", "900 Dawson Dr",
-                         "Denver", "Colorado", "80247", "956-255-5655", "email@gmail.com")
+                         "Denver", "Colorado", "80247", "956-255-5655", "email@gmail.com", 3)
 
     # creating a list to use as a "database"
     customer_list = [premade_customer, premade_customer_two, to_delete]

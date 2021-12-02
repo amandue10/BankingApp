@@ -5,7 +5,7 @@ from service_layer.implementation_services.customer_service_imp import CustomerS
 customer_dao = CustomerDAOImp()
 customer_service = CustomerServiceImp(customer_dao)
 customer = Customer(4, "Sam", "Denton", "C", "400 Dawson Drive", "Edinburg",
-                    "Texas", "80247", "956-250-7894", "tom@gmail.com")
+                    "Texas", "80247", "956-250-7894", "tom@gmail.com", 2)
 
 
 # create customer test

@@ -7,7 +7,9 @@ from entities.customer import Customer
 from service_layer.abstract_services import account_service
 from service_layer.implementation_services.customer_service_imp import CustomerServiceImp
 from service_layer.implementation_services.account_service_imp import AccountServiceImp
-
+# import logging
+#
+# logging.basicConfig(filename="records.log", level=logging.DEBUG, format=f"%(asctime)s %(levelname)s %(message)s")
 app: Flask = Flask(__name__)
 
 customer_dao = CustomerDAOImp()
