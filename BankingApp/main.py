@@ -1,13 +1,11 @@
 from flask import Flask, request, jsonify
 
-from data_access_layer.implementation_classes.account_dao_imp import AccountDAOImp
 from data_access_layer.implementation_classes.account_postgres_dao import AccountPostgresDAO
 from data_access_layer.implementation_classes.customer_postgres_dao import CustomerPostgresDAO
 from entities.account import Account
 from entities.customer import Customer
 from service_layer.abstract_services import account_service
 from service_layer.implementation_services.account_postgres_service import AccountPostgresService
-from service_layer.implementation_services.account_service_imp import AccountServiceImp
 from service_layer.implementation_services.customer_postgres_service import CustomerPostgresService
 
 # import logging
@@ -21,7 +19,7 @@ account_dao = AccountPostgresDAO()
 account_service = AccountPostgresService(account_dao)
 
 
-# create player method - Postman Test Working
+# create player method - Postman Test not working
 @app.post("/customer")
 def create_customer_entry():
     # try:
@@ -54,6 +52,7 @@ def get_customer_information(customer_id: str):
     return result_as_json
 
 
+# postman test working
 @app.get("/customer")
 def get_all_customers_information():
     customers_as_customers = customer_service.service_get_all_customers_information()
@@ -64,7 +63,7 @@ def get_all_customers_information():
     return jsonify(customers_as_dictionary)
 
 
-# update customer - Postman Test Complete
+# update customer - Postman Test not working
 @app.patch("/customer/<customer_id>")
 def update_customer_information(customer_id: str):
     # try:
@@ -86,10 +85,6 @@ def update_customer_information(customer_id: str):
     return "Customer updated successfully, the customer info is now " + str(updated_customer)
 
 
-# except DuplicateCustomerException as e:
-#     return str(e)
-
-
 # delete customer information - Postman Test Working
 @app.delete("/customer/<customer_id>")
 def delete_customer_information(customer_id: str):
@@ -100,7 +95,7 @@ def delete_customer_information(customer_id: str):
         return "Something went wrong: customer with id {} was not deleted".format(customer_id)
 
 
-# create postman test working
+# create - postman not working
 @app.post("/account")
 def create_account():
     # try:
@@ -117,10 +112,6 @@ def create_account():
     return account_as_json
 
 
-# except DuplicateTeamNameException as e:
-#     error_message = {"errorMessage": str(e)}
-#     return jsonify(error_message), 400
-
 # postman test working
 @app.get("/account/<account_id>")
 def get_account_by_id(account_id: str):
@@ -130,7 +121,7 @@ def get_account_by_id(account_id: str):
     return result_as_json
 
 
-#
+# postman test working
 @app.get("/account")
 def get_all_accounts():
     accounts = account_service.service_get_all_account_information()
@@ -141,8 +132,7 @@ def get_all_accounts():
     return jsonify(accounts_as_dictionaries), 200
 
 
-# string return showing none on postman test - not needed for mvp
-# need to reformat
+# post man test not working
 @app.patch("/account/<account_id>")
 def update_team(account_id: str):
     account_data = request.get_json()
@@ -157,7 +147,7 @@ def update_team(account_id: str):
     return "Account updated successfully, the Account info is now " + str(updated_account)
 
 
-# postman test working
+# postman test not working
 @app.delete("/account/<account_id>")
 def delete_account(account_id: str):
     result = account_service.service_delete_account_information(int(account_id))

@@ -25,7 +25,7 @@ class CustomerPostgresDAO(CustomerDAO):
         customer = Customer(*customer_record)
         return customer
 
-    # working and persisting to database
+    # working on update currently
     def update_customer_information(self, customer: Customer) -> Customer:
         sql = "update customer set account_id = %s, first_name = %s, last_name = %s, middle_name = %s, street = %s, " \
               "state = %s, city = %s, zip_code = %s, phone = %s, email = %s  where customer_id = %s "

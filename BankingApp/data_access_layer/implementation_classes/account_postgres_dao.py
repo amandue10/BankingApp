@@ -8,7 +8,7 @@ class AccountPostgresDAO(AccountDAO):
     def create_account(self, account: Account) -> Account:
         sql = "insert into account values(default, %s, %s, %s) returning account_id"
         cursor = connection.cursor()
-        cursor.execute(sql, [account.account_id])
+        cursor.execute(sql, (account.account_type, account.account_name, account.account_balance))
         connection.commit()
         generated_id = cursor.fetchone()[0]
         account.account_id = generated_id
@@ -23,7 +23,7 @@ class AccountPostgresDAO(AccountDAO):
         account = Account(*account_record)
         return account
 
-# working
+# not working, needs code line 30
     def update_account_information(self, account: Account) -> Account:
         sql = "update account set balance = %s where account_id = %s"
         cursor = connection.cursor()

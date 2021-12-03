@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d23172da-b289-453a-b91f-fc19f13d252b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data_access_layer/implementation_classes/account_postgres_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_layer/implementation_services/account_postgres_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service_layer/implementation_services/customer_postgres_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests/test_account_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests/test_account_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests/test_customer_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_access_layer/abstract_classes/account_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_access_layer/abstract_classes/account_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_access_layer/implementation_classes/account_postgres_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_access_layer/implementation_classes/account_postgres_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_access_layer/implementation_classes/customer_postgres_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_access_layer/implementation_classes/customer_postgres_dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,28 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="BankingApp" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Python tests for test_account_dao.test_create_account_success">
     <configuration name="Python tests for test_account_dao.test_create_account_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="BankingApp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -76,21 +50,21 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_account_dao.test_delete_account_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_customer_dao.test_create_player" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="BankingApp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_account_dao.test_delete_account_success&quot;" />
+      <option name="_new_target" value="&quot;test_customer_dao.test_create_player&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_account_dao.test_select_account_by_id_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_account_dao.py (1)" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="BankingApp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,38 +74,52 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_account_dao.test_select_account_by_id_success&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests/test_account_dao.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_account_dao.test_select_all_account_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_account_dao.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="BankingApp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/account_dao_test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_account_dao.test_select_all_account_success&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_for_app/account_dao_test/test_account_dao.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in tests_for_app" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BankingApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests_for_app&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python tests.Python tests for test_account_dao.test_create_account_success" />
-      <item itemvalue="Python tests.Python tests for test_account_dao.test_delete_account_success" />
-      <item itemvalue="Python tests.Python tests for test_account_dao.test_select_account_by_id_success" />
-      <item itemvalue="Python tests.Python tests for test_account_dao.test_select_all_account_success" />
-      <item itemvalue="Python.main" />
+      <item itemvalue="Python tests.Python tests for test_customer_dao.test_create_player" />
+      <item itemvalue="Python tests.Python tests in tests_for_app" />
+      <item itemvalue="Python tests.Python tests in test_account_dao.py" />
+      <item itemvalue="Python tests.Python tests in test_account_dao.py (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Python tests for test_account_dao.test_create_account_success" />
-        <item itemvalue="Python tests.Python tests for test_account_dao.test_select_all_account_success" />
-        <item itemvalue="Python tests.Python tests for test_account_dao.test_select_account_by_id_success" />
-        <item itemvalue="Python tests.Python tests for test_account_dao.test_delete_account_success" />
+        <item itemvalue="Python tests.Python tests in test_account_dao.py (1)" />
+        <item itemvalue="Python tests.Python tests in test_account_dao.py" />
+        <item itemvalue="Python tests.Python tests in tests_for_app" />
+        <item itemvalue="Python tests.Python tests for test_customer_dao.test_create_player" />
       </list>
     </recent_temporary>
   </component>
