@@ -1,21 +1,24 @@
 from flask import Flask, request, jsonify
 
-from data_access_layer.implementation_classes.customer_dao_imp import CustomerDAOImp
 from data_access_layer.implementation_classes.account_dao_imp import AccountDAOImp
+from data_access_layer.implementation_classes.account_postgres_dao import AccountPostgresDAO
+from data_access_layer.implementation_classes.customer_postgres_dao import CustomerPostgresDAO
 from entities.account import Account
 from entities.customer import Customer
 from service_layer.abstract_services import account_service
-from service_layer.implementation_services.customer_service_imp import CustomerServiceImp
+from service_layer.implementation_services.account_postgres_service import AccountPostgresService
 from service_layer.implementation_services.account_service_imp import AccountServiceImp
+from service_layer.implementation_services.customer_postgres_service import CustomerPostgresService
+
 # import logging
 #
 # logging.basicConfig(filename="records.log", level=logging.DEBUG, format=f"%(asctime)s %(levelname)s %(message)s")
 app: Flask = Flask(__name__)
 
-customer_dao = CustomerDAOImp()
-customer_service = CustomerServiceImp(customer_dao)
-account_dao = AccountDAOImp()
-account_service = AccountServiceImp(account_dao)
+customer_dao = CustomerPostgresDAO()
+customer_service = CustomerPostgresService(customer_dao)
+account_dao = AccountPostgresDAO()
+account_service = AccountPostgresService(account_dao)
 
 
 # create player method - Postman Test Working
@@ -25,6 +28,7 @@ def create_customer_entry():
     customer_data = request.get_json()
     new_customer = Customer(
         customer_data["customerId"],
+        customer_data["accountId"],
         customer_data["firstName"],
         customer_data["lastName"],
         customer_data["middleName"],
@@ -33,18 +37,12 @@ def create_customer_entry():
         customer_data["state"],
         customer_data["zipCode"],
         customer_data["phone"],
-        customer_data["email"],
+        customer_data["email"]
     )
     customer_to_return = customer_service.service_create_customer_entry(new_customer)
     customer_as_dictionary = customer_to_return.make_customer_dictionary()
     customer_as_json = jsonify(customer_as_dictionary)
     return customer_as_json
-
-
-# except DuplicateCustomerException as e:
-#     exception_dictionary = {"message": str(e)}
-#     exception_json = jsonify(exception_dictionary)
-#     return exception_json
 
 
 # get customer personal information - Postman Test Working
@@ -56,6 +54,16 @@ def get_customer_information(customer_id: str):
     return result_as_json
 
 
+@app.get("/customer")
+def get_all_customers_information():
+    customers_as_customers = customer_service.service_get_all_customers_information()
+    customers_as_dictionary = []
+    for customers in customers_as_customers:
+        dictionary_customer = customers.make_customer_dictionary()
+        customers_as_dictionary.append(dictionary_customer)
+    return jsonify(customers_as_dictionary)
+
+
 # update customer - Postman Test Complete
 @app.patch("/customer/<customer_id>")
 def update_customer_information(customer_id: str):
@@ -63,6 +71,7 @@ def update_customer_information(customer_id: str):
     customer_data = request.get_json()
     new_customer = Customer(
         int(customer_id),
+        customer_data["accountId"],
         customer_data["firstName"],
         customer_data["lastName"],
         customer_data["middleName"],
@@ -119,6 +128,17 @@ def get_account_by_id(account_id: str):
     result_as_dictionary = result.make_account_dictionary()
     result_as_json = jsonify(result_as_dictionary)
     return result_as_json
+
+
+#
+@app.get("/account")
+def get_all_accounts():
+    accounts = account_service.service_get_all_account_information()
+    accounts_as_dictionaries = []
+    for account in accounts:
+        dictionary_account = account.make_account_dictionary()
+        accounts_as_dictionaries.append(dictionary_account)
+    return jsonify(accounts_as_dictionaries), 200
 
 
 # string return showing none on postman test - not needed for mvp

@@ -24,3 +24,8 @@ class AccountDAO(ABC):
     @abstractmethod
     def delete_account_information(self, account_id: int) -> bool:
         pass
+
+    # get all account information List
+    @abstractmethod
+    def get_all_account_information(self) -> list[Account]:
+        pass
