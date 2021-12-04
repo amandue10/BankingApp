@@ -8,8 +8,7 @@ class CustomerPostgresService(CustomerService):
         self.customer_dao = customer_dao
 
     def service_create_customer_entry(self, customer: Customer) -> Customer:
-        created_customer = self.customer_dao.create_customer(customer)
-        return created_customer
+        return self.customer_dao.create_customer(customer)
 
     def service_get_customer_information(self, customer_id: int) -> Customer:
         return self.customer_dao.get_customer_information(customer_id)
@@ -18,10 +17,10 @@ class CustomerPostgresService(CustomerService):
         return self.customer_dao.get_all_customer_information()
 
     def service_update_customer_information(self, customer: Customer) -> Customer:
-        updated_customer = self.customer_dao.update_customer_information(customer)
-        return updated_customer
+        return self.customer_dao.update_customer_information(customer)
 
     def service_delete_customer_information(self, customer_id: int) -> bool:
         return self.customer_dao.delete_customer_information(customer_id)
 
-
+    def service_get_all_customer_accounts_by_id(self, customer_id: int) -> Customer:
+        pass

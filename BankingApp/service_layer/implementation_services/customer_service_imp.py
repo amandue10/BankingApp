@@ -9,7 +9,8 @@ class CustomerServiceImp(CustomerService):
 
     # create customer
     def service_create_customer_entry(self, customer: Customer) -> Customer:
-        return self.customer_dao.create_customer(customer)
+        created_customer = self.customer_dao.create_customer(customer)
+        return created_customer
 
     # get customer information
     def service_get_customer_information(self, customer_id: int) -> Customer:

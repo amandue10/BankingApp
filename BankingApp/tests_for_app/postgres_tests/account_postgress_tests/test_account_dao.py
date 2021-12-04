@@ -8,7 +8,7 @@ account_dao = AccountPostgresDAO()
 new_account = Account(1, "checking", "new", 200.00)
 update_account = Account(1, "checking", "new", 200.00)
 delete_account = Account(1, "checking", "new", 200.00)
-new_balance = Account(1, "checking", "new", 300.00)
+new_balance = Account(1, "checking", "new", 200.00)
 
 
 def test_create_account_success():
@@ -34,3 +34,5 @@ def test_update_account_success():
 def test_delete_account_success():
     confirm_account_deleted = account_dao.delete_account_information(3)
     assert confirm_account_deleted
+
+
