@@ -4,17 +4,17 @@ from util.database_connection import connection
 
 
 class AccountPostgresDAO(AccountDAO):
-    # not working, currently working
+    # green pytest and persisting to database
     def create_account(self, account: Account) -> Account:
-        sql = "insert into account values(default, %s, %s, %s) returning account_id"
+        sql = "insert into account values(default, %s, %s) returning account_id"
         cursor = connection.cursor()
-        cursor.execute(sql, (account.account_type, account.account_name, account.account_balance))
+        cursor.execute(sql, (account.customer_id, account.account_balance))
         connection.commit()
         generated_id = cursor.fetchone()[0]
         account.account_id = generated_id
         return account
 
-# working
+# pytest green
     def get_account_by_id(self, account_id: int) -> Account:
         sql = "select * from account where account_id = %s"
         cursor = connection.cursor()
@@ -25,12 +25,14 @@ class AccountPostgresDAO(AccountDAO):
 
 # not working, needs code line 30
     def update_account_information(self, account: Account) -> Account:
-        sql = "update account set balance = %s where account_id = %s"
+        sql = "update account set first_name = %s, last_name = %s where player_id = %s"
         cursor = connection.cursor()
-        cursor.execute(sql, ())
+        cursor.execute(sql,
+                       (account.first_name, account.last_name, account.account_id))
         connection.commit()
+        return account
 
-    # currently working
+    # pytest green, persisting to database
     def delete_account_information(self, account_id: int) -> bool:
         sql = "delete from account where account_id = %s"
         cursor = connection.cursor()
@@ -38,7 +40,7 @@ class AccountPostgresDAO(AccountDAO):
         connection.commit()
         return True
 
-    # currently working
+    # pytest green
     def get_all_account_information(self) -> list[Account]:
         sql = "select * from account"
         cursor = connection.cursor()

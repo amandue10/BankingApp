@@ -5,10 +5,10 @@ from entities.account import Account
 
 account_dao = AccountPostgresDAO()
 
-new_account = Account(1, "checking", "new", 200.00)
-update_account = Account(1, "checking", "new", 200.00)
-delete_account = Account(1, "checking", "new", 200.00)
-new_balance = Account(1, "checking", "new", 200.00)
+new_account = Account(1, 1, 200.00)
+update_account = Account(1, 1, 210.00)
+delete_account = Account(2, 1, 200.00)
+new_balance = Account(1, 1, 1200.00)
 
 
 def test_create_account_success():
@@ -17,8 +17,8 @@ def test_create_account_success():
 
 
 def test_select_account_by_id_success():
-    initial_account = account_dao.get_account_by_id(1)
-    assert initial_account.account_id == 1
+    initial_account = account_dao.get_account_by_id(4)
+    assert initial_account.account_id == 4
 
 
 def test_select_all_account_success():
@@ -32,7 +32,7 @@ def test_update_account_success():
 
 
 def test_delete_account_success():
-    confirm_account_deleted = account_dao.delete_account_information(3)
+    confirm_account_deleted = account_dao.delete_account_information(10)
     assert confirm_account_deleted
 
 
