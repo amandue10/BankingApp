@@ -9,6 +9,7 @@ new_account = Account(1, 1, 200.00)
 update_account = Account(1, 1, 210.00)
 delete_account = Account(2, 1, 200.00)
 new_balance = Account(1, 1, 1200.00)
+new_balances = 210.00
 
 
 def test_create_account_success():
@@ -28,7 +29,7 @@ def test_select_all_account_success():
 
 def test_update_account_success():
     updated_account = account_dao.update_account_information(update_account)
-    assert updated_account.account_balance == new_balance
+    assert updated_account.account_balance == new_balances
 
 
 def test_delete_account_success():

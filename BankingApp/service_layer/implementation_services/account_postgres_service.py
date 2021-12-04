@@ -24,7 +24,6 @@ class AccountPostgresService(AccountService):
     def service_get_all_account_information(self) -> list[Account]:
         return self.account_dao.get_all_account_information()
 
-# not complete section --------------------- ------------------------------------------
     def service_get_all_customer_accounts_by_id(self, customer_id: int) -> list[Account]:
         return self.account_dao.get_all_customer_accounts_by_id(customer_id)
 

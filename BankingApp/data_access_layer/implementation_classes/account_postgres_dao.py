@@ -25,10 +25,10 @@ class AccountPostgresDAO(AccountDAO):
 
     # not working, needs code line 30
     def update_account_information(self, account: Account) -> Account:
-        sql = "update account set first_name = %s, last_name = %s where player_id = %s"
+        sql = "update account set customer_id = %s, account_balance = %s where account_id = %s"
         cursor = connection.cursor()
         cursor.execute(sql,
-                       (account.first_name, account.last_name, account.account_id))
+                       (account.customer_id, account.account_balance, account.account_id))
         connection.commit()
         return account
 
@@ -51,7 +51,7 @@ class AccountPostgresDAO(AccountDAO):
             account_list.append(Account(*account))
         return account_list
 
-    # needs work to get all accounts for one customer
+    # py test green, postman good
     def get_all_customer_accounts_by_id(self, customer_id: int) -> list[Account]:
         sql = "select * from account where customer_id = %s"
         cursor = connection.cursor()
