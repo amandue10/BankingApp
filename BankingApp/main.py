@@ -26,16 +26,8 @@ def create_customer_entry():
     customer_data = request.get_json()
     new_customer = Customer(
         customer_data["customerId"],
-        customer_data["accountId"],
         customer_data["firstName"],
-        customer_data["lastName"],
-        customer_data["middleName"],
-        customer_data["street"],
-        customer_data["city"],
-        customer_data["state"],
-        customer_data["zipCode"],
-        customer_data["phone"],
-        customer_data["email"]
+        customer_data["lastName"]
     )
     customer_to_return = customer_service.service_create_customer_entry(new_customer)
     customer_as_dictionary = customer_to_return.make_customer_dictionary()
@@ -70,16 +62,9 @@ def update_customer_information(customer_id: str):
     customer_data = request.get_json()
     new_customer = Customer(
         int(customer_id),
-        customer_data["accountId"],
         customer_data["firstName"],
-        customer_data["lastName"],
-        customer_data["middleName"],
-        customer_data["street"],
-        customer_data["city"],
-        customer_data["state"],
-        customer_data["zipCode"],
-        customer_data["phone"],
-        customer_data["email"]
+        customer_data["lastName"]
+
     )
     updated_customer = customer_service.service_update_customer_information(new_customer)
     return "Customer updated successfully, the customer info is now " + str(updated_customer)
@@ -102,8 +87,7 @@ def create_account():
     body = request.get_json()
     new_account = Account(
         body["accountId"],
-        body["accountType"],
-        body["accountName"],
+        body["customerId"],
         body["accountBalance"]
     )
     account_to_return = account_service.service_create_account(new_account)
@@ -138,9 +122,8 @@ def update_team(account_id: str):
     account_data = request.get_json()
     new_account = Account(
         int(account_id),
-        account_data["accountName"],
-        account_data["accountType"],
-        account_data["accountBalance"],
+        account_data["customerId"],
+        account_data["accountBalance"]
 
     )
     updated_account = account_service.service_update_account_information(new_account)
