@@ -50,11 +50,4 @@ class CustomerPostgresDAO(CustomerDAO):
             customer_list.append(Customer(*customer))
         return customer_list
 
-    # needs work to get all accounts for one customer
-    def get_all_customer_accounts_by_id(self, customer_id: int) -> Customer:
-        sql = ""
-        cursor = connection.cursor()
-        cursor.execute(sql, [customer_id])
-        customer_record = cursor.fetchone()
-        customer = Customer(*customer_record)
-        return customer
+

@@ -80,7 +80,7 @@ def delete_customer_information(customer_id: str):
         return "Something went wrong: customer with id {} was not deleted".format(customer_id)
 
 
-# create - postman not working
+# create - postman working
 @app.post("/account")
 def create_account():
     # try:
@@ -116,6 +116,17 @@ def get_all_accounts():
     return jsonify(accounts_as_dictionaries), 200
 
 
+# postman test NOT working
+@app.get("/accounts/<customer_id>")
+def get_all_customer_accounts_by_id(customer_id: str):
+    results = account_service.service_get_all_customer_accounts_by_id(int(customer_id))
+    customer_accounts_as_dictionaries = []
+    for account in results:
+        customer_accounts_dictionaries = account.make_account_dictionary()
+        customer_accounts_as_dictionaries.append(customer_accounts_dictionaries)
+    return jsonify(customer_accounts_as_dictionaries), 200
+
+
 # post man test not working
 @app.patch("/account/<account_id>")
 def update_team(account_id: str):
@@ -130,7 +141,7 @@ def update_team(account_id: str):
     return "Account updated successfully, the Account info is now " + str(updated_account)
 
 
-# postman test not working
+# postman test working
 @app.delete("/account/<account_id>")
 def delete_account(account_id: str):
     result = account_service.service_delete_account_information(int(account_id))

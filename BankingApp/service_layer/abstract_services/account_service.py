@@ -23,3 +23,8 @@ class AccountService(ABC):
     @abstractmethod
     def service_delete_account_information(self, account_id: int) -> bool:
         pass
+
+    # get all accounts for one customer
+    @abstractmethod
+    def service_get_all_customer_accounts_by_id(self, customer_id: int) -> Account:
+        pass

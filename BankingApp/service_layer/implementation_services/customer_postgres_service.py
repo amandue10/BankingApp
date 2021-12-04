@@ -21,6 +21,3 @@ class CustomerPostgresService(CustomerService):
 
     def service_delete_customer_information(self, customer_id: int) -> bool:
         return self.customer_dao.delete_customer_information(customer_id)
-
-    def service_get_all_customer_accounts_by_id(self, customer_id: int) -> Customer:
-        pass

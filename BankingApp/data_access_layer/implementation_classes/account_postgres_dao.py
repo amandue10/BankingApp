@@ -14,7 +14,7 @@ class AccountPostgresDAO(AccountDAO):
         account.account_id = generated_id
         return account
 
-# pytest green
+    # pytest green
     def get_account_by_id(self, account_id: int) -> Account:
         sql = "select * from account where account_id = %s"
         cursor = connection.cursor()
@@ -23,7 +23,7 @@ class AccountPostgresDAO(AccountDAO):
         account = Account(*account_record)
         return account
 
-# not working, needs code line 30
+    # not working, needs code line 30
     def update_account_information(self, account: Account) -> Account:
         sql = "update account set first_name = %s, last_name = %s where player_id = %s"
         cursor = connection.cursor()
@@ -48,5 +48,16 @@ class AccountPostgresDAO(AccountDAO):
         account_records = cursor.fetchall()
         account_list = []
         for account in account_records:
+            account_list.append(Account(*account))
+        return account_list
+
+    # needs work to get all accounts for one customer
+    def get_all_customer_accounts_by_id(self, customer_id: int) -> list[Account]:
+        sql = "select * from account where customer_id = %s"
+        cursor = connection.cursor()
+        cursor.execute(sql, [customer_id])
+        account_record = cursor.fetchall()
+        account_list = []
+        for account in account_record:
             account_list.append(Account(*account))
         return account_list

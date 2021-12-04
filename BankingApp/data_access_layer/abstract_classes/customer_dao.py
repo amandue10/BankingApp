@@ -30,7 +30,4 @@ class CustomerDAO(ABC):
     def get_all_customer_information(self) -> list[Customer]:
         pass
 
-    # get all accounts for one customer
-    @abstractmethod
-    def get_all_customer_accounts_by_id(self, customer_id: int) -> Customer:
-        pass
+

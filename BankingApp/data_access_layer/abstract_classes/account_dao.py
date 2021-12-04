@@ -29,3 +29,8 @@ class AccountDAO(ABC):
     @abstractmethod
     def get_all_account_information(self) -> list[Account]:
         pass
+
+    # get all accounts for one customer
+    @abstractmethod
+    def get_all_customer_accounts_by_id(self, customer_id: int) -> Account:
+        pass

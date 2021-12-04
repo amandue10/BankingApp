@@ -32,7 +32,14 @@ def test_update_account_success():
 
 
 def test_delete_account_success():
-    confirm_account_deleted = account_dao.delete_account_information(10)
+    confirm_account_deleted = account_dao.delete_account_information(3)
     assert confirm_account_deleted
 
 
+# needs configuration
+def test_get_all_customer_accounts_by_id():
+    returned_customer_accounts = account_dao.get_all_customer_accounts_by_id(5)
+    # assert returned_customer_accounts.customer_id == 5
+    # assert returned_customer_accounts.account_id == 4
+    # assert returned_customer_accounts.account_balance == 300.00
+    assert len(returned_customer_accounts) >= 3

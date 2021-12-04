@@ -44,10 +44,6 @@ def test_delete_customer_success():
     assert confirm_customer_deleted
 
 
-def test_get_all_customer_accounts_by_id():
-    returned_customer_accounts = customer_dao.get_all_customer_accounts_by_id(5)
-    assert returned_customer_accounts.customer_id == 5
-    assert returned_customer_accounts.account_id == 2
-    assert returned_customer_accounts.first_name == "Susanana"
+
 
 
