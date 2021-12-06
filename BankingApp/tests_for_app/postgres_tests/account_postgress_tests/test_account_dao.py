@@ -14,7 +14,6 @@ new_balances = 210.00
 deposit_new_balances = 240.00
 
 
-
 def test_create_account_success():
     account_result = account_dao.create_account(new_account)
     assert account_result.account_id != 0
@@ -36,6 +35,16 @@ def test_update_account_success():
 
 
 def test_deposit_into_account_by_id():
+    updated_account = account_dao.deposit_into_account_by_id(deposit_account)
+    assert updated_account.account_balance == deposit_new_balances
+
+
+def test_withdrawal_from_account_by_id():
+    updated_account = account_dao.deposit_into_account_by_id(deposit_account)
+    assert updated_account.account_balance == deposit_new_balances
+
+
+def test_transfer_money_between_accounts_by_id():
     updated_account = account_dao.deposit_into_account_by_id(deposit_account)
     assert updated_account.account_balance == deposit_new_balances
 

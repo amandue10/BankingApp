@@ -63,7 +63,9 @@ class AccountPostgresDAO(AccountDAO):
         return account_list
 
     # ------------------- Working below final 3 ----------------------------------
-    # pytest green, persisting to database, business logic in service layer
+    # pytest green,
+    # not persisting to database,
+    # postman test shows business logic working
     def deposit_into_account_by_id(self, account: Account) -> Account:
         sql = "update account set account_balance = %s where account_id = %s"
         cursor = connection.cursor()
@@ -72,6 +74,7 @@ class AccountPostgresDAO(AccountDAO):
         connection.commit()
         return account
 
+    # pytest green, working on service layer
     def withdrawal_from_account_by_id(self, account: Account) -> Account:
         sql = "update account set account_balance = %s where account_id = %s"
         cursor = connection.cursor()
@@ -82,8 +85,11 @@ class AccountPostgresDAO(AccountDAO):
 
     def transfer_money_between_accounts_by_id(self, account: Account) -> Account:
         sql = "update account set account_balance = %s where account_id = %s"
+        sql2 = "update account set account_balance = %s where account_id = %s"
         cursor = connection.cursor()
         cursor.execute(sql,
+                       (account.account_balance, account.account_id))
+        cursor.execute(sql2,
                        (account.account_balance, account.account_id))
         connection.commit()
         return account

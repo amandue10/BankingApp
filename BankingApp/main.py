@@ -152,7 +152,7 @@ def delete_account(account_id: str):
         return "Something went wrong: account with id {} was not deleted".format(account_id)
 
 
-# post man not working
+# post works as intended, not persisting to database
 @app.patch("/deposit/<account_id>")
 def deposit_account(account_id):
     account_data = request.get_json()
@@ -163,6 +163,32 @@ def deposit_account(account_id):
     )
     updated_account = account_service.service_deposit_into_account_by_id(dep_account)
     return updated_account
+
+
+# patch works as intended, not persisting to database
+@app.patch("/withdrawal/<account_id>")
+def withdrawal_account(account_id):
+    account_data = request.get_json()
+    dep_account = Account(
+        account_data["accountId"],
+        account_data["customerId"],
+        account_data["accountBalance"]
+    )
+    updated_account = account_service.service_withdrawal_from_account_by_id(dep_account)
+    return updated_account
+
+
+# testing
+@app.patch("/transfer/<account_id>/<account_id>")
+def transfer_account(account_id):
+    account_data = request.get_json()
+    tran_account = Account(
+        account_data["accountId"],
+        account_data["customerId"],
+        account_data["accountBalance"]
+    )
+    transfer = account_service.transfer_money_between_accounts_by_id(tran_account)
+    return transfer
 
 
 app.run()

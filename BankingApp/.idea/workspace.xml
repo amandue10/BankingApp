@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d23172da-b289-453a-b91f-fc19f13d252b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_access_layer/abstract_classes/account_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_access_layer/abstract_classes/account_dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_access_layer/implementation_classes/account_postgres_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_access_layer/implementation_classes/account_postgres_dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service_layer/abstract_services/account_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service_layer/abstract_services/account_service.py" afterDir="false" />
@@ -60,6 +59,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_account_dao.test_delete_account_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="BankingApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_account_dao.test_delete_account_success&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_account_dao.test_deposit_into_account_by_id" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="BankingApp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,7 +87,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_account_dao.test_update_account_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_account_dao.test_withdrawal_from_account_by_id" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="BankingApp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -84,21 +97,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_account_dao.test_update_account_success&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_customer_dao.test_update_customer_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="BankingApp" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_for_app/postgres_tests/customer_postgress_tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_customer_dao.test_update_customer_success&quot;" />
+      <option name="_new_target" value="&quot;test_account_dao.test_withdrawal_from_account_by_id&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -117,19 +116,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Python tests for test_customer_dao.test_update_customer_success" />
-      <item itemvalue="Python tests.Python tests for test_account_dao.test_update_account_success" />
       <item itemvalue="Python tests.Python tests for test_account_dao.test_deposit_into_account_by_id" />
       <item itemvalue="Python tests.Python tests in test_account_dao.py" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python tests.Python tests for test_account_dao.test_withdrawal_from_account_by_id" />
+      <item itemvalue="Python tests.Python tests for test_account_dao.test_delete_account_success" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Python tests for test_account_dao.test_delete_account_success" />
+        <item itemvalue="Python tests.Python tests for test_account_dao.test_withdrawal_from_account_by_id" />
         <item itemvalue="Python tests.Python tests for test_account_dao.test_deposit_into_account_by_id" />
         <item itemvalue="Python tests.Python tests in test_account_dao.py" />
-        <item itemvalue="Python tests.Python tests for test_account_dao.test_update_account_success" />
-        <item itemvalue="Python tests.Python tests for test_customer_dao.test_update_customer_success" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +165,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests/test_account_dao.py</url>
-          <line>33</line>
+          <line>32</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
