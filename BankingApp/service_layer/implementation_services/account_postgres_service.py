@@ -35,7 +35,9 @@ class AccountPostgresService(AccountService):
         deposit = Decimal(updated_account.account_balance)
         for current_account in accounts:
             current_balance = current_account.account_balance
-            updated_account = current_balance + deposit
+            balance_after_deposit = current_balance + deposit
+            updated_account.account_balance = balance_after_deposit
+            updated_account = self.account_dao.deposit_into_account_by_id(account)
         return str(updated_account)
 
     def service_withdrawal_from_account_by_id(self, account: Account) -> Account:
@@ -44,7 +46,9 @@ class AccountPostgresService(AccountService):
         withdrawal = Decimal(updated_account.account_balance)
         for current_account in accounts:
             current_balance = current_account.account_balance
-            updated_account = current_balance - withdrawal
+            balance_after_withdrawal = current_balance - withdrawal
+            updated_account.account_balance = balance_after_withdrawal
+            updated_account = self.account_dao.withdrawal_from_account_by_id(account)
         return str(updated_account)
 
     def transfer_money_between_accounts_by_id(self, account: Account) -> Account:
@@ -53,7 +57,8 @@ class AccountPostgresService(AccountService):
         withdrawal = Decimal(updated_account.account_balance)
         for current_account in accounts:
             current_balance = current_account.account_balance
-            updated_account = current_balance - withdrawal
+            updated_account1 = current_balance - withdrawal
+            print(updated_account1)
         accounts2 = self.service_get_all_account_information()
         updated_account2 = self.account_dao.deposit_into_account_by_id(account)
         deposit = Decimal(updated_account2.account_balance)
