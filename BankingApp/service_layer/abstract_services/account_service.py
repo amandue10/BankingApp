@@ -41,6 +41,6 @@ class AccountService(ABC):
 
     # path transfer
     @abstractmethod
-    def transfer_money_between_accounts_by_id(self, account: Account) -> Account:
+    def transfer_money_between_accounts_by_id(self, account: Account, account2: Account) -> Account:
         pass
 

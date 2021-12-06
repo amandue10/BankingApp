@@ -165,7 +165,7 @@ def deposit_account(account_id):
     return updated_account
 
 
-# patch works as intended, not persisting to database
+# patch works as intended, persisting to database
 @app.patch("/withdrawal/<account_id>")
 def withdrawal_account(account_id):
     account_data = request.get_json()
@@ -182,12 +182,18 @@ def withdrawal_account(account_id):
 @app.patch("/transfer/<account_id>")
 def transfer_account(account_id):
     account_data = request.get_json()
+    account_data2 = request.get_json()
     tran_account = Account(
         account_data["accountId"],
         account_data["customerId"],
         account_data["accountBalance"]
     )
-    transfer = account_service.transfer_money_between_accounts_by_id(tran_account)
+    tran2_account = Account(
+        account_data2["accountId"],
+        account_data2["customerId"],
+        account_data2["accountBalance"]
+    )
+    transfer = account_service.transfer_money_between_accounts_by_id(tran_account,tran2_account)
     return transfer
 
 

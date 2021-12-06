@@ -83,7 +83,7 @@ class AccountPostgresDAO(AccountDAO):
         connection.commit()
         return account
 
-    def transfer_money_between_accounts_by_id(self, account: Account) -> Account:
+    def transfer_money_between_accounts_by_id(self, account: Account, account2: Account) -> Account:
         sql = "update account set account_balance = %s where account_id = %s"
         sql2 = "update account set account_balance = %s where account_id = %s"
         cursor = connection.cursor()
