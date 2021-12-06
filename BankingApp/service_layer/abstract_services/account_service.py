@@ -28,3 +28,8 @@ class AccountService(ABC):
     @abstractmethod
     def service_get_all_customer_accounts_by_id(self, customer_id: int) -> Account:
         pass
+
+    # patch deposit
+    @abstractmethod
+    def service_deposit_into_account_by_id(self, account: Account) -> Account:
+        pass

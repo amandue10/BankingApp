@@ -23,7 +23,7 @@ class AccountPostgresDAO(AccountDAO):
         account = Account(*account_record)
         return account
 
-    # not working, needs code line 30
+    # postman green pytest green
     def update_account_information(self, account: Account) -> Account:
         sql = "update account set customer_id = %s, account_balance = %s where account_id = %s"
         cursor = connection.cursor()
@@ -61,3 +61,29 @@ class AccountPostgresDAO(AccountDAO):
         for account in account_record:
             account_list.append(Account(*account))
         return account_list
+
+    # ------------------- Working below final 3 ----------------------------------
+    # pytest green, persisting to database, business logic in service layer
+    def deposit_into_account_by_id(self, account: Account) -> Account:
+        sql = "update account set account_balance = %s where account_id = %s"
+        cursor = connection.cursor()
+        cursor.execute(sql,
+                       (account.account_balance, account.account_id))
+        connection.commit()
+        return account
+
+    def withdrawal_from_account_by_id(self, account: Account) -> Account:
+        sql = "update account set account_balance = %s where account_id = %s"
+        cursor = connection.cursor()
+        cursor.execute(sql,
+                       (account.account_balance, account.account_id))
+        connection.commit()
+        return account
+
+    def transfer_money_between_accounts_by_id(self, account: Account) -> Account:
+        sql = "update account set account_balance = %s where account_id = %s"
+        cursor = connection.cursor()
+        cursor.execute(sql,
+                       (account.account_balance, account.account_id))
+        connection.commit()
+        return account

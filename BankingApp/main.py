@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from unicodedata import decimal
 
 from data_access_layer.implementation_classes.account_postgres_dao import AccountPostgresDAO
 from data_access_layer.implementation_classes.customer_postgres_dao import CustomerPostgresDAO
@@ -116,7 +117,7 @@ def get_all_accounts():
     return jsonify(accounts_as_dictionaries), 200
 
 
-# postman test NOT working
+# postman test working
 @app.get("/accounts/<customer_id>")
 def get_all_customer_accounts_by_id(customer_id: str):
     results = account_service.service_get_all_customer_accounts_by_id(int(customer_id))
@@ -127,9 +128,9 @@ def get_all_customer_accounts_by_id(customer_id: str):
     return jsonify(customer_accounts_as_dictionaries), 200
 
 
-# post man test not working
+# post man working
 @app.patch("/account/<account_id>")
-def update_team(account_id: str):
+def update_account(account_id: str):
     account_data = request.get_json()
     new_account = Account(
         int(account_id),
@@ -149,6 +150,19 @@ def delete_account(account_id: str):
         return "Account with id {} was deleted successfully".format(account_id)
     else:
         return "Something went wrong: account with id {} was not deleted".format(account_id)
+
+
+# post man not working
+@app.patch("/deposit/<account_id>")
+def deposit_account(account_id):
+    account_data = request.get_json()
+    dep_account = Account(
+        account_data["accountId"],
+        account_data["customerId"],
+        account_data["accountBalance"]
+    )
+    updated_account = account_service.service_deposit_into_account_by_id(dep_account)
+    return updated_account
 
 
 app.run()

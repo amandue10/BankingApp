@@ -34,3 +34,18 @@ class AccountDAO(ABC):
     @abstractmethod
     def get_all_customer_accounts_by_id(self, customer_id: int) -> Account:
         pass
+
+    # deposit
+    @abstractmethod
+    def deposit_into_account_by_id(self, account: Account) -> Account:
+        pass
+
+    # withdrawal
+    @abstractmethod
+    def withdrawal_from_account_by_id(self, account: Account) -> Account:
+        pass
+
+    # transfer
+    @abstractmethod
+    def transfer_money_between_accounts_by_id(self, account: Account) -> Account:
+        pass
