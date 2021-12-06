@@ -152,7 +152,7 @@ def delete_account(account_id: str):
         return "Something went wrong: account with id {} was not deleted".format(account_id)
 
 
-# post works as intended, not persisting to database
+# post works as intended, persisting to database
 @app.patch("/deposit/<account_id>")
 def deposit_account(account_id):
     account_data = request.get_json()
