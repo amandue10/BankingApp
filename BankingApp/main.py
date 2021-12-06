@@ -179,16 +179,16 @@ def withdrawal_account(account_id):
 
 
 # testing
-# @app.patch("/transfer/<account_id>/<account_id>")
-# def transfer_account(account_id):
-#     account_data = request.get_json()
-#     tran_account = Account(
-#         account_data["accountId"],
-#         account_data["customerId"],
-#         account_data["accountBalance"]
-#     )
-#     transfer = account_service.transfer_money_between_accounts_by_id(tran_account)
-#     return transfer
+@app.patch("/transfer/<account_id>")
+def transfer_account(account_id):
+    account_data = request.get_json()
+    tran_account = Account(
+        account_data["accountId"],
+        account_data["customerId"],
+        account_data["accountBalance"]
+    )
+    transfer = account_service.transfer_money_between_accounts_by_id(tran_account)
+    return transfer
 
 
 app.run()
