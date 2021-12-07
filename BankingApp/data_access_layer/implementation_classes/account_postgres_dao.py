@@ -62,37 +62,24 @@ class AccountPostgresDAO(AccountDAO):
             account_list.append(Account(*account))
         return account_list
 
-    # ------------------- Working below final 3 ----------------------------------
     # pytest green,
-    # not persisting to database,
     # postman test shows business logic working
     def deposit_into_account_by_id(self, account: Account) -> Account:
-        sql = "update account set account_balance = %s where account_id = %s"
+        sql = "update account set customer_id = %s, account_balance = %s where account_id = %s"
         cursor = connection.cursor()
         cursor.execute(sql,
-                       (account.account_balance, account.account_id))
+                       (account.customer_id, account.account_balance, account.account_id))
         connection.commit()
         return account
 
     # pytest green, working on service layer
     def withdrawal_from_account_by_id(self, account: Account) -> Account:
-        sql = "update account set account_balance = %s where account_id = %s"
+        sql = "update account set customer_id = %s, account_balance = %s where account_id = %s"
         cursor = connection.cursor()
         cursor.execute(sql,
-                       (account.account_balance, account.account_id))
+                       (account.customer_id, account.account_balance, account.account_id))
         connection.commit()
         return account
-
-    # def transfer_money_between_accounts_by_id(self, account: Account, account2: Account) -> Account:
-    #     sql = "update account set account_balance = %s where account_id = %s"
-    #     sql2 = "update account set account_balance = %s where account_id = %s"
-    #     cursor = connection.cursor()
-    #     cursor.execute(sql,
-    #                    (account.account_balance, account.account_id))
-    #     cursor.execute(sql2,
-    #                    (account.account_balance, account.account_id))
-    #     connection.commit()
-    #     return account
 
     def transfer_money_between_accounts_by_id(self, amount: int, transfer_id, recieve_id):
         sql = "update account set account_balance = account_balance - %s where account_id = %s"

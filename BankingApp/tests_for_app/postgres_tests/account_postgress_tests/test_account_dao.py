@@ -5,7 +5,7 @@ from entities.account import Account
 
 account_dao = AccountPostgresDAO()
 
-new_account = Account(1, 1, 200.00)
+new_account = Account(1, 1, 400.00)
 update_account = Account(6, 4, 210.00)
 deposit_account = Account(7, 5, 240.00)
 delete_account = Account(2, 1, 200.00)
@@ -50,17 +50,17 @@ def test_transfer_money_between_accounts_by_id():
 
 
 def test_delete_account_success():
-    confirm_account_deleted = account_dao.delete_account_information(3)
+    confirm_account_deleted = account_dao.delete_account_information(19)
     assert confirm_account_deleted
 
 
 # needs configuration
 def test_get_all_customer_accounts_by_id():
-    returned_customer_accounts = account_dao.get_all_customer_accounts_by_id(5)
+    returned_customer_accounts = account_dao.get_all_customer_accounts_by_id(1)
     # assert returned_customer_accounts.customer_id == 5
     # assert returned_customer_accounts.account_id == 4
     # assert returned_customer_accounts.account_balance == 300.00
-    assert len(returned_customer_accounts) >= 3
+    assert len(returned_customer_accounts) >= 4
 
 
 def test_transfer():

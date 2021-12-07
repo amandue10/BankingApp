@@ -2,7 +2,7 @@ from data_access_layer.implementation_classes.customer_postgres_dao import Custo
 from entities.customer import Customer
 
 customer_dao = CustomerPostgresDAO()
-customer: Customer = Customer(1, "Sam", "Denton")
+customer: Customer = Customer(1, "Barb", "Westons")
 
 random_names = {"Sam"}
 random_names.add("Mary")
@@ -40,7 +40,7 @@ def test_update_customer_success():
 
 
 def test_delete_customer_success():
-    confirm_customer_deleted = customer_dao.delete_customer_information(3)
+    confirm_customer_deleted = customer_dao.delete_customer_information(9)
     assert confirm_customer_deleted
 
 

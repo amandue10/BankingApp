@@ -31,18 +31,13 @@ class AccountService(ABC):
 
     # patch deposit
     @abstractmethod
-    def service_deposit_into_account_by_id(self, account: Account) -> Account:
+    def service_deposit_into_account_by_id(self, account_id: int, account_balance):
         pass
 
     # patch withdrawal
     @abstractmethod
-    def service_withdrawal_from_account_by_id(self, account: Account) -> Account:
+    def service_withdrawal_from_account_by_id(self, account_id: int, account_balance):
         pass
-
-    # # path transfer
-    # @abstractmethod
-    # def transfer_money_between_accounts_by_id(self, account: Account, account2: Account) -> Account:
-    #     pass
 
     @abstractmethod
     def service_transfer_into_bank_account(self, account_id: int, account_id2: int, amount):
