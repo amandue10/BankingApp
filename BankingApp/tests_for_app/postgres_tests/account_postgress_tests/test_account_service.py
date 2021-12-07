@@ -9,7 +9,7 @@ account_service = AccountPostgresService(account_dao)
 account = Account(17, 1, 0)
 
 
-def test_transfer_exception():
+def test_transfer_exception_negative_numbers():
     try:
         account_service.service_transfer_into_bank_account(17, 1, -100)
         assert False
@@ -17,7 +17,7 @@ def test_transfer_exception():
         assert str(e) == "Oops! Can't add negative funds"
 
 
-def test_transfer_exception_2():
+def test_transfer_exception_insufficient_funds():
     try:
         account_service.service_transfer_into_bank_account(17, 1, 800)
         assert False

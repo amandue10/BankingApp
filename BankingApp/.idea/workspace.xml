@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d23172da-b289-453a-b91f-fc19f13d252b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/custom_exceptions/custom_exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_exceptions/duplicate_customer_exception.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_exceptions/negative_balance_exception.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_layer/implementation_services/account_postgres_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service_layer/implementation_services/account_postgres_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests/test_account_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_for_app/postgres_tests/account_postgress_tests/test_account_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
