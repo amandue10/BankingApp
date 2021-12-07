@@ -179,22 +179,30 @@ def withdrawal_account(account_id):
 
 
 # testing
-@app.patch("/transfer/<account_id>/<account_id2>")
-def transfer_account(account_id, account_id2):
-    account_data = request.get_json()
-    account_data2 = request.get_json()
-    tran_account = Account(
-        account_data["accountId"],
-        account_data["customerId"],
-        account_data["accountBalance"]
-    )
-    tran2_account = Account(
-        account_data2["accountId"],
-        account_data2["customerId"],
-        account_data2["accountBalance"]
-    )
-    transfer = account_service.transfer_money_between_accounts_by_id(tran_account,tran2_account)
-    return transfer
+# @app.patch("/transfer/<account_id>/<account_id2>")
+# def transfer_account(account_id, account_id2):
+#     account_data = request.get_json()
+#     account_data2 = request.get_json()
+#     tran_account = Account(
+#         account_data["accountId"],
+#         account_data["customerId"],
+#         account_data["accountBalance"]
+#     )
+#     tran2_account = Account(
+#         account_data2["accountId"],
+#         account_data2["customerId"],
+#         account_data2["accountBalance"]
+#     )
+#     transfer = account_service.transfer_money_between_accounts_by_id(tran_account,tran2_account)
+#     return transfer
+
+# Works and persists to database
+@app.patch("/transfer/<transfer_id>/<receive_id>")
+def transfer_into_bank_account(transfer_id: str, receive_id: str):
+    data = request.get_json()
+    amount = data["accountBalance"]
+    account_service.service_transfer_into_bank_account(int(transfer_id), int(receive_id), int(amount))
+    return "Transfer successful. ${} was transferred.".format(amount)
 
 
 app.run()

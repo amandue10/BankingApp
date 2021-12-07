@@ -61,3 +61,8 @@ def test_get_all_customer_accounts_by_id():
     # assert returned_customer_accounts.account_id == 4
     # assert returned_customer_accounts.account_balance == 300.00
     assert len(returned_customer_accounts) >= 3
+
+
+def test_transfer():
+    result = account_dao.transfer_money_between_accounts_by_id(100, 6, 5)
+    assert result

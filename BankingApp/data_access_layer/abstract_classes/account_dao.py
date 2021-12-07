@@ -46,6 +46,11 @@ class AccountDAO(ABC):
         pass
 
     # transfer
+    # @abstractmethod
+    # def transfer_money_between_accounts_by_id(self, account: Account, account2: Account) -> Account:
+    #     pass
+
+    # transfer
     @abstractmethod
-    def transfer_money_between_accounts_by_id(self, account: Account, account2: Account) -> Account:
+    def transfer_money_between_accounts_by_id(self, amount: int, transfer_id, recieve_id):
         pass
