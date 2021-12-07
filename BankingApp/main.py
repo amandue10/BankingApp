@@ -179,8 +179,8 @@ def withdrawal_account(account_id):
 
 
 # testing
-@app.patch("/transfer/<account_id>")
-def transfer_account(account_id):
+@app.patch("/transfer/<account_id>/<account_id2>")
+def transfer_account(account_id, account_id2):
     account_data = request.get_json()
     account_data2 = request.get_json()
     tran_account = Account(

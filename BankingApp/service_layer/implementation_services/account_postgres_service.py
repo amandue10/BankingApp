@@ -68,4 +68,7 @@ class AccountPostgresService(AccountService):
             balance_after_deposit = current_balance + deposit
             updated_account2.account_balance = balance_after_deposit
             updated_account2 = self.account_dao.deposit_into_account_by_id(account2)
+        updated_account2 = self.account_dao.transfer_money_between_accounts_by_id(account, account2)
         return str(updated_account2)
+
+
