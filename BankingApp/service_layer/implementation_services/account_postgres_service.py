@@ -1,5 +1,6 @@
 from decimal import Decimal
 
+from custom_exceptions.custom_exceptions import NoNegativeNumbers, NotEnoughFunds
 from data_access_layer.implementation_classes.account_postgres_dao import AccountPostgresDAO
 from entities.account import Account
 from service_layer.abstract_services.account_service import AccountService
@@ -94,11 +95,11 @@ class AccountPostgresService(AccountService):
     #     return str(updated_account2)
 
     def service_transfer_into_bank_account(self, transfer_id: int, receive_id: int, amount):
-        # account = self.account_dao.get_account_by_id(transfer_id)
-        # if amount < -1:
-        #     raise NoNegativeNumbers("No negative funds")
-        # if account.balance < amount:
-        #     raise NotEnoughFunds("Not Enough Funds!")
+        account = self.account_dao.get_account_by_id(transfer_id)
+        if amount < -1:
+            raise NoNegativeNumbers("Oops! Can't add negative funds")
+        if account.account_balance < amount:
+            raise NotEnoughFunds("Oops! You don't have enough funds to transfer")
         return self.account_dao.transfer_money_between_accounts_by_id(amount, transfer_id, receive_id)
 
 
